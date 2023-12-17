@@ -262,7 +262,19 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  
+  if (index <= 1) {
+    return index;
+  }
+  let prev = 0;
+  let current = 1;
+
+  for (let i = 2; i <= index; i += 1) {
+    const next = prev + current;
+    prev = current;
+    current = next;
+  }
+
+  return current;
 }
 
 /**
@@ -276,8 +288,9 @@ function getFibonacciNumber(index) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  const sum = (n ** 2 + n) / 2;
+  return sum;
 }
 
 /**
